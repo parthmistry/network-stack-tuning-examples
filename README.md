@@ -7,7 +7,7 @@ cd java-test/
 ./gradlew clean build
 ```
 
-### Capacity Test
+#### Capacity Test
 To run Server application
 ```
 java -cp build/libs/java-test.jar post.parthmistry.nst.capacity.TestServer
@@ -18,7 +18,7 @@ To run Client application
 java -cp build/libs/java-test.jar post.parthmistry.nst.capacity.TestClient
 ```
 
-### New Connection Test
+#### New Connection Test
 To run server application
 ```
 java -cp build/libs/java-test.jar post.parthmistry.nst.newconn.TestServer
@@ -37,7 +37,7 @@ cd rust-test/
 cargo build --release
 ```
 
-### Capacity Test
+#### Capacity Test
 To run Server application
 ```
 ./target/release/capacity_server
@@ -50,7 +50,7 @@ To run Client application
 
 
 
-### New Connection Test
+#### New Connection Test
 To run server application
 ```
 ./target/release/newconn_server
