@@ -9,7 +9,7 @@ public class TestClient {
     public static void main(String[] args) throws Exception {
         SocketStatLogger socketStatLogger = new SocketStatLogger();
         socketStatLogger.start();
-        final int parallelCount = 8;
+        final int parallelCount = 4;
         ExecutorService executor = Executors.newFixedThreadPool(parallelCount);
         for (int i = 0; i < parallelCount; i++) {
             executor.submit(() -> {

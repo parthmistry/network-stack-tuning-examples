@@ -9,7 +9,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let socket_stat_logger = SocketStatLogger::new(Arc::clone(&socket_stat));
     let server_addr = "pmload2.southeastasia.cloudapp.azure.com:9393".to_socket_addrs()?.next().unwrap();
 
-    for _ in 0..8 {
+    for _ in 0..4 {
         let socket_stat_clone = Arc::clone(&socket_stat);
         std::thread::spawn(move || {
             let socket_stat = socket_stat_clone;
