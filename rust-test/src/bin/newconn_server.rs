@@ -19,15 +19,9 @@ fn main() -> Result<(), Box<dyn Error>> {
         let receiver: Receiver<TcpStream> = receiver.clone();
         std::thread::spawn(move || {
             loop {
-                match receiver.recv() {
-                    Ok(mut tcp_stream) => {
-                        let mut buffer: [u8; 1] = [0; 1];
-                        match tcp_stream.read(&mut buffer) {
-                            Ok(_) => {}
-                            Err(_) => {}
-                        }
-                    }
-                    Err(_) => {}
+                if let Ok(mut tcp_stream) = receiver.recv() {
+                    let mut buffer: [u8; 1] = [0; 1];
+                    tcp_stream.read(&mut buffer).unwrap();
                 }
             }
         });
