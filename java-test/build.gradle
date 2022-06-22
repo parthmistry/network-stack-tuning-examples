@@ -5,3 +5,12 @@ plugins {
 repositories {
     mavenCentral()
 }
+
+dependencies {
+    implementation 'io.netty:netty-all:4.1.77.Final'
+}
+
+task copyDependencies(type: Copy) {
+    from configurations.compileClasspath
+    into 'dependencies'
+}
